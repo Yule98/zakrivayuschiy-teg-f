@@ -18,6 +18,9 @@
   background-attachment: fixed;
   background-image: var(--linear-gradient);
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .header {
   background-color: var(--bg-color);
@@ -29,6 +32,12 @@
   border: 2px solid var(--main-color);
  margin-top: var(--header-margin);
  margin-bottom: var(--header-margin);
+ 
+}
+.header_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .main-heading {
   font-family: var(--accent-font);
@@ -37,7 +46,7 @@
   display: block;
   text-transform: uppercase;
   justify-self: center;
-  align-self: start;
+  
   padding-bottom: 19px;
 }
 .title-text {
@@ -46,18 +55,17 @@
   line-height: 100%;
   text-transform: uppercase;
   display: inline;
-  padding-left: 83px;
+  
 }
 .cards {
   width: var(--container-width);
-  min-height: 758px;
+  
   background-color: var(--bg-color);
   display: grid;
   gap: 50px;
-  padding-bottom: 50px;
 }
 .card {
-  
+  min-height: 758px;
   border: 2px solid var(--main-color);
 }
 .subtitle {
@@ -98,7 +106,6 @@
   min-height: 371px;
   display: block;
   object-fit: cover;
-  object-position: right;
 }
 .autobus_pale {
   filter: grayscale(0.7) opacity(0.9) contrast(105%);
@@ -139,18 +146,13 @@
   font-size: 18px;
   padding-left: 25px;
   padding-right: 25px;
-  padding-bottom: 88px;
+  padding-bottom: 25px;
   max-width: 371px;
 }
 .footer {
   background-color: var(--bg-color);
 }
-.button_save {
-  
-  width: 306px;
-  height: 84px;
-  
-}
+
 .card_button-container {
   margin-right: 25px;
   margin-bottom: 25px;
@@ -209,13 +211,13 @@
 .like-icon.is-liked {
   animation: change-scale 0.3s 0.1s ease-in 1 forwards;
 }
-.like-icon.sparks {
+.like-icon .sparks {
   opacity: 0;
 }
 .like-icon.is-liked .sparks {
 animation: change-opacity 0.3s ease-in 0.3s 1 forwards;
 }
-.like-icon.contour {
+.like-icon .contour {
   fill: var(--color-contour);
   transition: fill 0.1s linear;
 }
@@ -223,7 +225,7 @@ animation: change-opacity 0.3s ease-in 0.3s 1 forwards;
 fill: var(--color-animation-main);
 transition: fill 0.3s linear 0.06s;
 }
-.like-icon.core {
+.like-icon .core {
   fill: transparent;
   transition: fill 0.3s linear 0.03s;
 }
@@ -239,7 +241,7 @@ transition: fill 0.3s linear 0.06s;
   fill: var(--color-animation-main);
   transition: fill 0.3s linear;
 }
-.like-icon.main-body {
+.like-icon .main-body {
   fill: transparent;
   transition: fill 0.3s linear;
 }
@@ -272,7 +274,78 @@ transition: fill 0.3s linear 0.06s;
   box-shadow: 2px 2px 0 0 var(--main-color);
   transition: box-shadow 0.3s ease;
 }
-
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.save__disk {
+  max-width: 28px;
+  height: auto;
+  fill: currentColor;
+}
+.button__save {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 306px;
+  min-height: 84px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.save__span {
+  width: 266px;
+  min-height: 14px;
+}
+.dialog[open] {
+  width: 341px;
+  border: 2px solid var(--color-contour);
+  font-size: 14px;
+  line-height: 90%;
+  font-family: var(--accent-font);
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  column-gap: 20px;
+  row-gap: 30px;
+  
+}
+.big-save__disk {
+  max-width: 39px;
+  height: auto;
+  justify-self: end;
+  align-self: center;
+}
+.dialog_title {
+  text-transform: uppercase;
+  line-height: 150%;
+  max-width: 234px;
+  font-size: 14px;
+  text-align: start;
+  
+}
+.dialog__button {
+  grid-column: span 2;
+  max-width: 261px;
+  min-height: 38px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--color-contour);
+  margin-left: 22px;
+  margin-right: 22px;
+  margin-bottom: 16px;
+}
+.dialog .button__text {
+line-height: 90%;
+text-transform: uppercase;
+}
+.dialog::backdrop {
+  opacity: 75%;
+  background-color: var(--main-color);
+}
 @media (width >=1440px) {
   .page {
     min-block-size: 1440px;
