@@ -110,7 +110,8 @@
 }
 @supports (-webkit-text-stroke: 1px var(--bg-color)) {
   .label {
-  -webkit-text-stroke: 1px var(--bg-color);
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--bg-color);
   }
 }
 .bus {
@@ -156,7 +157,6 @@
   font-weight: var(--font-w-card-text);
   font-size: 18px;
   line-height: 21px;
-  word-spacing: 2px;
 }
 .card_button-container {
   padding-right: 25px;
@@ -184,13 +184,13 @@
 .button {
   overflow: hidden;
   position: relative;
+  transition: 0.3s ease;
 }
 .button:focus {
   outline: none;
 }
 .button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--main-color);
-  transition: 0.3s ease;
 }
 .button::before {
   position: absolute;
@@ -275,10 +275,6 @@
   z-index: 2;
   mix-blend-mode: difference;
   color: var(--bg-color);
-}
-.button__text:focus {
-  border: none;
-  box-shadow: 2px 2px 0 0 var(--main-color);
 }
 .save__disk {
   color: var(--bg-color);
